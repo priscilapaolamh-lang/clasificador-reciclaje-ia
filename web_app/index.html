@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>♻️ Clasificador de Reciclaje</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>♻️ Clasificador de Reciclaje</h1>
+        <p class="subtitle">Muestra tu residuo a la cámara para clasificarlo</p>
+
+        <div class="camera-wrapper">
+            <video id="webcam" autoplay playsinline></video>
+            <div id="overlay">
+                <div id="prediction">
+                    <span id="label">Esperando...</span>
+                    <span id="confidence">0%</span>
+                </div>
+                <div id="progress-bar">
+                    <div id="progress-fill" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn">📷 Iniciar Cámara</button>
+            <button id="stopBtn" style="display:none;">⏹ Detener</button>
+        </div>
+
+        <div class="info">
+            <p>🎯 Categorías: Cartón • Vidrio • Metal • Papel • Plástico • Basura</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
